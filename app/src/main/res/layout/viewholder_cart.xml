@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/grey_background"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <View
+        android:id="@+id/sepetView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/sepetUrunImg"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sepetView"
+        app:layout_constraintEnd_toEndOf="@id/sepetView"
+        app:layout_constraintStart_toStartOf="@id/sepetView"
+        app:layout_constraintTop_toTopOf="@id/sepetView"
+        android:src="@drawable/pic1"
+        android:background="@drawable/white_background3" />
+    <TextView
+        android:id="@+id/sepetBaslikTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="title"
+        style="@style/textStyleBold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/sepetView"
+        app:layout_constraintTop_toTopOf="@id/sepetView" />
+    <TextView
+        android:id="@+id/sepetFiyatTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        style="@style/textStyleBold"
+        app:layout_constraintBottom_toBottomOf="@+id/sepetView"
+        app:layout_constraintStart_toStartOf="@id/sepetBaslikTxt" />
+    <TextView
+        android:id="@+id/sepetToplamFiyatTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="$0"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sepetBaslikTxt"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <TextView
+            android:id="@+id/sepetAzaltTxt"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/background_white4"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sepetAdetTxt"
+            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/sepetArttirTxt"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/background_white4"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sepetAdetTxt"/>
+
+        <TextView
+            android:id="@+id/sepetAdetTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/sepetArttirTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sepetArttirTxt"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

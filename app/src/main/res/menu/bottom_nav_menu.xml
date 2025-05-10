@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_explorer"
+        android:icon="@drawable/btn_1"
+        android:title="Keşfet" />
+    <item
+        android:id="@+id/menu_wishlist"
+        android:icon="@drawable/btn_2"
+        android:title="İstek Listesi" />
+    <item
+        android:id="@+id/menu_cart"
+        android:icon="@drawable/btn_3"
+        android:title="Sepet" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/btn_4"
+        android:title="Profil" />
+</menu>
