@@ -8,14 +8,26 @@
     android:background="@color/grey"
     android:elevation="3dp">
 
-    <ImageView
-        android:id="@+id/populerUrunlerImg"
-        android:layout_width="175dp"
-        android:layout_height="155dp"
-        android:src="@drawable/pic1"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ustConstLay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/populerUrunlerInfoView">
+
+        <ImageView
+            android:id="@+id/populerUrunlerImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/mac"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="55dp"
@@ -49,7 +61,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Ürün Bilgi Bölgesi -->
     <View
         android:id="@+id/populerUrunlerInfoView"
         android:layout_width="match_parent"
@@ -57,7 +68,9 @@
         android:background="@drawable/white_background2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ustConstLay"
+        />
 
     <!-- Ürün Başlığı -->
     <TextView

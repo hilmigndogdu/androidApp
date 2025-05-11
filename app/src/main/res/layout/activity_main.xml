@@ -6,7 +6,7 @@
     android:id="@+id/Mainlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
     <ScrollView
@@ -45,7 +45,7 @@
                     android:id="@+id/isimTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tuna Karaköse"
+                    android:text=""
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -95,7 +95,9 @@
                 android:id="@+id/reklamCardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -106,6 +108,7 @@
                     android:id="@+id/cardConstraitLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:background="@color/red">
 
                     <ImageView
@@ -175,17 +178,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/reklamCardView" />
 
-            <HorizontalScrollView
-                android:id="@+id/kategorilerHorizontalScrollView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginEnd="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/kategoriBaslikTxt">
-
             <LinearLayout
                 android:id="@+id/kategorilerCardView"
                 android:layout_width="0dp"
@@ -198,9 +190,13 @@
                 app:layout_constraintTop_toBottomOf="@id/kategoriBaslikTxt">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori_tumu"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_margin="8dp"
+                    android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="36dp"
                     app:cardElevation="4dp">
 
@@ -212,10 +208,46 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/kategori_pc"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
+                            android:clickable="true"
+                            android:contentDescription="Tümü"
+                            android:focusable="true"
+                            android:src="@drawable/cat5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Tümü"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori_pc"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="36dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:clickable="true"
                             android:contentDescription="PC"
+                            android:focusable="true"
                             android:src="@drawable/cat1" />
 
                         <TextView
@@ -230,9 +262,12 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori_telefon"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="36dp"
                     app:cardElevation="4dp">
 
@@ -244,10 +279,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/kategori_telefon"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
+                            android:clickable="true"
                             android:contentDescription="Telefon"
+                            android:focusable="true"
                             android:src="@drawable/cat2" />
 
                         <TextView
@@ -262,10 +298,13 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori_kulaklik"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_margin="8dp"
                     android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="36dp"
                     app:cardElevation="4dp">
 
@@ -277,10 +316,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/kategori_kulaklik"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
+                            android:clickable="true"
                             android:contentDescription="Kulaklık"
+                            android:focusable="true"
                             android:src="@drawable/cat3" />
 
                         <TextView
@@ -294,10 +334,13 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/kategori_oyun"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_margin="8dp"
                     android:backgroundTint="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardCornerRadius="36dp"
                     app:cardElevation="4dp">
 
@@ -309,10 +352,11 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/kategori_oyun"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
+                            android:clickable="true"
                             android:contentDescription="Oyun"
+                            android:focusable="true"
                             android:src="@drawable/cat4" />
 
                         <TextView
@@ -325,71 +369,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="@color/white"
-                    app:cardCornerRadius="36dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/kategori_mouse"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:contentDescription="Oyun"
-                            android:src="@drawable/cat6" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Mouse"
-                            android:textColor="@color/black"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="@color/white"
-                    app:cardCornerRadius="36dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/kategori_tumu"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:contentDescription="Tümü"
-                            android:src="@drawable/cat5" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Tümü"
-                            android:textColor="@color/black"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
             </LinearLayout>
-            </HorizontalScrollView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/populerUrunlerBaslikConsLay"
@@ -398,7 +378,7 @@
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/kategorilerHorizontalScrollView">
+                app:layout_constraintTop_toBottomOf="@id/kategorilerCardView">
 
                 <TextView
                     android:id="@+id/populerUrunlerTxt"
@@ -411,15 +391,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tumunuGorTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tümünü Gör"
-                    android:textColor="@color/red"
-                    android:textSize="15sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -431,11 +402,19 @@
                 android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/kategorilerHorizontalScrollView" />
+                app:layout_constraintTop_toBottomOf="@id/kategorilerCardView"
+                android:contentDescription="Ürün Resmi"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <!-- Fragment Container -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/alt_menu"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/alt_menu"

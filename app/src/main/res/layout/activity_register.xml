@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@color/cardview_shadow_start_color">
 
     <TextView
         android:id="@+id/kayitOlTxt"
@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         android:gravity="center"
         android:text="Kayıt Ol"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_margin="10dp"
         android:gravity="center"
         android:text="Lütfen bilgilerinizi giriniz"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/kayitOlTxt" />
@@ -37,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#AAFFFFFF"
+        android:backgroundTint="#eaeaea"
         app:cardCornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,22 +54,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="        Ad Soyad"
+                android:hint="  Ad Soyad"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintBottom_toTopOf="@id/emailLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/cardConstraitLayout"
                 app:layout_constraintWidth_percent="0.95"
-                app:startIconDrawable="@android:drawable/ic_menu_edit">
+                android:textColorHint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/adSoyadEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:padding="15dp"
-                    android:textColor="@color/black" />
+                    android:background="@drawable/rounded_card"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:drawableStart="@android:drawable/ic_menu_edit"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -78,20 +79,22 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="         E-Posta"
+                android:hint="  E-Posta"
+                android:textColorHint="@color/black"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/adSoyadLayout"
-                app:layout_constraintWidth_percent="0.95"
-                app:startIconDrawable="@android:drawable/ic_dialog_email">
+                app:layout_constraintWidth_percent="0.95">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:padding="15dp" />
+                    android:background="@drawable/rounded_card"
+                    android:padding="15dp"
+                    android:drawableStart="@android:drawable/ic_dialog_email"
+                    android:drawableTint="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -100,20 +103,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:hint="        Kullanıcı Adı"
+                android:hint=" Kullanıcı Adı"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/emailLayout"
                 app:layout_constraintWidth_percent="0.94"
-                app:startIconDrawable="@android:drawable/ic_menu_myplaces">
+                android:textColorHint="@color/black"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/kullaniciAdiEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:padding="12dp" />
+                    android:background="@drawable/rounded_card"
+                    android:padding="12dp"
+                    android:drawableStart="@android:drawable/ic_menu_myplaces"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -122,23 +128,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:hint="        Şifre"
+                android:hint="Şifre"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/kullaniciAdiLayout"
                 app:layout_constraintWidth_percent="0.94"
-                app:startIconDrawable="@android:drawable/ic_lock_lock"
-                app:startIconTint="@color/black">
+                android:textColorHint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/sifreEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:background="@drawable/rounded_card"
                     android:inputType="textPassword"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:drawableStart="@android:drawable/ic_lock_lock"
+                    android:drawableTint="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -147,23 +154,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:hint="      Şifre (Tekrar)"
+                android:hint="  Şifre (Tekrar)"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sifreLayout"
                 app:layout_constraintWidth_percent="0.94"
-                app:startIconDrawable="@android:drawable/ic_lock_lock"
-                app:startIconTint="@color/black">
+                android:textColorHint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tekrarSifreEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:background="@drawable/rounded_card"
                     android:inputType="textPassword"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:drawableStart="@android:drawable/ic_lock_lock"
+                    android:drawableTint="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -191,7 +199,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="Zaten hesabın var mı?"
-        android:textColor="@android:color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -208,7 +216,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="Giriş Yap"
-        android:textColor="@android:color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

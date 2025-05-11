@@ -18,16 +18,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-        android:id="@+id/sepetUrunImg"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="64dp"
         android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="@+id/sepetView"
         app:layout_constraintEnd_toEndOf="@id/sepetView"
         app:layout_constraintStart_toStartOf="@id/sepetView"
-        app:layout_constraintTop_toTopOf="@id/sepetView"
-        android:src="@drawable/pic1"
+        app:layout_constraintTop_toTopOf="@id/sepetView">
+    <ImageView
+        android:id="@+id/sepetUrunImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/mac"
         android:background="@drawable/white_background3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/sepetBaslikTxt"
         android:layout_width="wrap_content"
@@ -49,11 +59,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/sepetView"
         app:layout_constraintStart_toStartOf="@id/sepetBaslikTxt" />
     <TextView
-        android:id="@+id/sepetToplamFiyatTxt"
+        android:id="@+id/sepetSilTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="$0"
+        android:background="@android:drawable/ic_menu_delete"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@color/red"

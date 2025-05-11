@@ -4,14 +4,20 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@color/cardview_shadow_start_color">
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Veritabanlarını Sıfırla"/>
 
     <TextView
         android:id="@+id/hosgeldinizTxt"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="Hoşgeldiniz"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="Lütfen Giriş yapınız"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +49,7 @@
         android:id="@+id/girisYapCard"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="#AAFFFFFF"
+        android:backgroundTint="#eaeaea"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +62,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardConstLay"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/girisYapTxt"
@@ -81,14 +87,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/girisYapTxt"
-                app:layout_constraintWidth_percent="0.94">
-
+                app:layout_constraintWidth_percent="0.94"
+                android:textColorHint="@color/black">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/kullaniciAdiEdt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/baseline_account_circle_24"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_card"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -96,14 +104,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Şifre"
+                android:textColorHint="@color/black"
                 android:layout_marginTop="12dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:endIconMode="password_toggle"
+                app:endIconTint="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/kullaniciAdiLayout"
                 app:layout_constraintWidth_percent="0.94"
-                app:startIconDrawable="@android:drawable/ic_lock_lock"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -111,7 +120,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:padding="10dp" />
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_card"
+                    android:drawableStart="@android:drawable/ic_lock_lock"
+                    android:drawableTint="@color/black"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -168,7 +181,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Şifremi Unuttum"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

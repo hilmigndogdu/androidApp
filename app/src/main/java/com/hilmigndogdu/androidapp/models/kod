@@ -1,0 +1,118 @@
+/*
+        ProductDatabaseHelper dbHelper = new ProductDatabaseHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+
+        values.put("urunAdi", "Samsung");
+        values.put("fiyat", 500);
+        values.put("yorumSayisi", 40);
+        values.put("puan", 4.2);
+        values.put("resimKaynak", R.drawable.samsung);
+        values.put("aciklama", "Samsung, yüksek çözünürlüklü ekranı ve uzun pil ömrüyle dikkat çeker. Bu telefon, yüksek performansı sayesinde günlük işlerinizde hızlı ve verimli bir deneyim sunar. Farklı özellikleri ve kullanıcı dostu arayüzü ile her yaştan kullanıcıya hitap eder. Üst düzey işlemcisi, uygulamalar arasında geçişleri hızlı ve sorunsuz hale getirir. Ayrıca, şık ve zarif tasarımı ile stil sahibi kullanıcılara hitap eder, teknoloji dünyasında kendine sağlam bir yer edinmiştir.");
+        values.put("kategori", "Telefon");
+        db.insert("urun", null, values);
+
+        values.put("urunAdi", "Sennheiser");
+        values.put("fiyat", 350);
+        values.put("yorumSayisi", 80);
+        values.put("puan", 4.8);
+        values.put("resimKaynak", R.drawable.sennheiser);
+        values.put("aciklama", "Sennheiser, profesyonel ses kalitesi arayanlar için mükemmel bir markadır. Yüksek çözünürlüklü ses performansı ve uzun pil ömrü ile müzik dinleme deneyiminizi zirveye taşır. Ergonomik tasarımı ve hafif yapısı, uzun süreli kullanımlarda bile rahatlık sunar. Sennheiser kulaklıklar, detaylı ses çözünürlüğü sunarak müzikseverlerin beklentilerini fazlasıyla karşılar. Ses kalitesi ile profesyonel düzeyde ses dinlemeyi seven kullanıcılar için ideal bir tercihtir.");
+        values.put("kategori", "Kulaklık");
+        db.insert("urun", null, values);
+
+
+
+        values.put("urunAdi", "Xbox");
+        values.put("fiyat", 1500);
+        values.put("yorumSayisi", 76);
+        values.put("puan", 4.9);
+        values.put("resimKaynak", R.drawable.xbox);
+        values.put("aciklama", "Xbox, güçlü donanımı ve oyun dünyasındaki yüksek performansı ile dikkat çeker. Oyunlarda üstün grafikler ve hızlı yüklenme süreleri ile mükemmel bir deneyim sunar. Uzun süreli kullanımda bile konforlu bir oyun deneyimi sağlayan ergonomik tasarımı, oyunculara rahatlık sunar. Ayrıca, Xbox Game Pass gibi hizmetleri ile sürekli olarak yeni oyunlara erişim imkanı sunar. Bu cihaz, oyun severler için ideal bir tercihtir.");
+        values.put("kategori", "Oyun");
+        db.insert("urun", null, values);
+
+// Kulaklık
+        values.put("urunAdi", "JBL");
+        values.put("fiyat", 150);
+        values.put("yorumSayisi", 32);
+        values.put("puan", 4.1);
+        values.put("resimKaynak", R.drawable.jbl);
+        values.put("aciklama", "JBL, güçlü ses kalitesiyle müzik dinlemeyi seven kullanıcılar için harika bir tercihtir. Kulaklıklar, dışarıdaki gürültüyü izole ederek net ve derin ses deneyimi sunar. Uzun süreli kullanım için rahat bir tasarıma sahip olan JBL, spor yaparken ya da seyahat ederken de idealdir. Ayrıca, dayanıklı yapısı sayesinde uzun ömürlüdür. Bu kulaklık, müzik dinlerken konfor ve yüksek ses kalitesi arayanlar için mükemmel bir seçimdir.");
+        values.put("kategori", "Kulaklık");
+        db.insert("urun", null, values);
+
+// PC
+        values.put("urunAdi", "MacBook");
+        values.put("fiyat", 1000);
+        values.put("yorumSayisi", 12);
+        values.put("puan", 3.6);
+        values.put("resimKaynak", R.drawable.acer);
+        values.put("aciklama", "MacBook Air, hafifliği ve şıklığı ile dikkat çeker. Mükemmel ekranı ve uzun pil ömrü sayesinde, iş ve eğlence için ideal bir seçimdir. Hızlı işlemcisi, gün boyu süren performansı ile sizi yarı yolda bırakmaz. Ayrıca, tasarımıyla her yere taşıması oldukça kolaydır. Bu cihaz, mobil yaşam tarzı olanlar için mükemmel bir seçim sunuyor.");
+        values.put("kategori", "PC");
+        db.insert("urun", null, values);
+
+// Telefon
+        values.put("urunAdi", "Huawei");
+        values.put("fiyat", 350);
+        values.put("yorumSayisi", 60);
+        values.put("puan", 4.0);
+        values.put("resimKaynak", R.drawable.huawei);
+        values.put("aciklama", "Huawei, uygun fiyatı ve etkileyici özellikleriyle öne çıkıyor. Büyük ekranı sayesinde multimedya deneyimi oldukça tatmin edici olup, aynı zamanda uzun süreli pil ömrü ile gün boyu kesintisiz kullanım imkanı sunar. Kamera ve işlemci kalitesiyle kullanıcılarının beklentilerini karşılar. Dayanıklı yapısı ve modern tasarımı, Huawei'yi kaliteli bir telefon arayanlar için ideal bir seçenek haline getiriyor.");
+        values.put("kategori", "Telefon");
+        db.insert("urun", null, values);
+
+// Kulaklık
+        values.put("urunAdi", "Sony");
+        values.put("fiyat", 250);
+        values.put("yorumSayisi", 65);
+        values.put("puan", 4.5);
+        values.put("resimKaynak", R.drawable.sony);
+        values.put("aciklama", "Sony kulaklıkları, ses performansları ile ünlüdür. Yüksek kaliteli ses, derin baslar ve net tizler, müzik dinlemenizi eşsiz bir deneyime dönüştürür. Uzun pil ömrü ile gün boyu kesintisiz kullanım sunar. Ayrıca, rahat bir kullanım sağlayan ergonomik tasarımı, uzun süreli kullanımlarda bile rahatsızlık vermez. Sony, müzik severler ve profesyonel kullanıcılar için mükemmel bir tercihtir.");
+        values.put("kategori", "Kulaklık");
+        db.insert("urun", null, values);
+
+// Oyun
+        values.put("urunAdi", "Playstation");
+        values.put("fiyat", 1200);
+        values.put("yorumSayisi", 56);
+        values.put("puan", 4.7);
+        values.put("resimKaynak", R.drawable.playstation);
+        values.put("aciklama", "Playstation, oyun dünyasında kendini kanıtlamış bir cihazdır. Yüksek çözünürlükteki grafikler ve mükemmel oyun performansı ile oyun deneyimini bir üst seviyeye taşır. Uzun süreli kullanımda bile rahat ve ergonomik tasarımıyla oyuncuların konforunu sağlar. Playstation, hem oyun severler hem de eğlenceli bir deneyim arayanlar için mükemmel bir tercihtir. Ayrıca, çevrimiçi oyun özellikleri sayesinde dünya çapında oyuncularla bağlantı kurmak oldukça keyiflidir.");
+        values.put("kategori", "Oyun");
+        db.insert("urun", null, values);
+
+// Laptop
+        values.put("urunAdi", "Monster");
+        values.put("fiyat", 750);
+        values.put("yorumSayisi", 8);
+        values.put("puan", 3.9);
+        values.put("resimKaynak", R.drawable.monster);
+        values.put("aciklama", "Monster markası, yüksek performansı ve uzun ömürlü piliyle tanınır. Bu ürün, her türlü multimedya ve ağır yazılım için güçlü bir çözüm sunar. Yüksek çözünürlüklü ekranı, görsel kaliteyi ön planda tutar. Ayrıca, taşınabilirliği sayesinde ofis dışı çalışmalarda bile verimli bir şekilde kullanabilirsiniz. Dayanıklı yapısı, uzun yıllar sorunsuz bir kullanım vaat eder.");
+        values.put("kategori", "PC");
+        db.insert("urun", null, values);
+
+// İphone
+        values.put("urunAdi", "İphone");
+        values.put("fiyat", 750);
+        values.put("yorumSayisi", 80);
+        values.put("puan", 4.5);
+        values.put("resimKaynak", R.drawable.iphone);
+        values.put("aciklama", "iPhone, üstün kalite ve performans sunan bir cihazdır. Yüksek çözünürlüklü ekranı ile görselleri oldukça net ve canlı gösterir. iOS ekosistemindeki uygulamalar ile mükemmel uyum sağlayarak, kullanıcıların hayatını kolaylaştırır. Kamera kalitesi, her tür fotoğrafçılık için oldukça iyidir. Ayrıca, şık ve zarif tasarımıyla estetik açıdan da tatmin edicidir, modern yaşamın her noktasında kullanıcıya mükemmel deneyim sunar.");
+        values.put("kategori", "Telefon");
+        db.insert("urun", null, values);
+
+// PC
+        values.put("urunAdi", "Acer");
+        values.put("fiyat", 500);
+        values.put("yorumSayisi", 20);
+        values.put("puan", 4.2);
+        values.put("resimKaynak", R.drawable.mac);
+        values.put("aciklama", "Acer'in sunduğu güçlü donanım ve şık tasarım birleşimi, kullanıcıları cezbetmektedir. Yüksek çözünürlüklü ekranı sayesinde görsel deneyim çok daha parlak ve canlıdır. Uzun pil ömrü ve güçlü işlemcisi ile günlük işlerinizi hızla tamamlayabilirsiniz. Bu cihaz, aynı zamanda çok sayıda bağlantı noktasıyla işlevsellik sağlar. Profesyonel işler ve oyunlar için ideal bir tercihtir.");
+        values.put("kategori", "PC");
+        db.insert("urun", null, values);
+
+        db.close();
+*/
