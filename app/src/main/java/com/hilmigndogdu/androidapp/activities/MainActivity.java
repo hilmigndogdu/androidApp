@@ -47,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.alt_menu);
+        bottomNavigationView.setSelectedItemId(R.id.menu_explorer);
 // switch-case yerine if-else kullandık çünkü Java'da switch-case yapısında kullanılan ifadelerin sabit (constant) olması gerekir.
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -76,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             currentMenuItemId = itemId;
             return true;
         });
+
+
 
 
 

@@ -22,6 +22,7 @@ public class DetailActivity extends AppCompatActivity {
     private Button spteklebtn;
     private int urunId;
     private CartManager sepetYonetici;
+    private ImageView geriButon;
 
 
     @Override
@@ -35,11 +36,11 @@ public class DetailActivity extends AppCompatActivity {
         resim = findViewById(R.id.imageView2);
         spteklebtn = findViewById(R.id.spteklebtn);
 
-        sepetYonetici = new CartManager(this);
+        sepetYonetici = CartManager.getInstance(this);
 
         String name = getIntent().getStringExtra("urunAdi");
         double price = getIntent().getDoubleExtra("fiyat", 0);
-        int imageResource = getIntent().getIntExtra("resimKaynak", -1);
+        int imageResource = getIntent().getIntExtra("resimKaynak", 0);
 
 
         // Veriyi veritabanından çekme
@@ -49,23 +50,28 @@ public class DetailActivity extends AppCompatActivity {
         urunAdi.setText(name);
         fiyat.setText(String.format("$%.2f", price));
         aciklama.setText(description);
-
-        // Hatalı kaynak kontrolü
-        if (imageResource == -1) {
-            // Eğer kaynak bulunamazsa varsayılan bir resim ata
-            imageResource = R.drawable.mac;  // Varsayılan resim
-        }
         resim.setImageResource(imageResource);
 
+        geriButon = findViewById(R.id.imageView);
+        geriButon.setOnClickListener(v -> onBackPressed());
 
-        // Satın Al butonuna tıklanınca ürünü sepete ekle
-        spteklebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sepetYonetici.urunEkle(urunId);
-                Toast.makeText(DetailActivity.this, "Ürün sepete eklendi!", Toast.LENGTH_SHORT).show();
+
+
+        spteklebtn.setOnClickListener(v -> {
+            if (urunId == 0) {
+                Toast.makeText(this, "Ürün bilgisi alınamadı!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            try {
+                // Sepete ekleme işlemi
+                CartManager.getInstance(getApplicationContext()).urunEkle(urunId);
+                Toast.makeText(this, "Ürün sepete eklendi!", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(this, "Sepete ekleme hatası: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
 
 
     }

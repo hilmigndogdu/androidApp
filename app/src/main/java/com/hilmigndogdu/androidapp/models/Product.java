@@ -17,7 +17,7 @@ public class Product {
         this.yorumSayisi = yorumSayisi;
         this.puan = puan;
         this.resimKaynak = resimKaynak;
-        this.adet = 1;  // Varsayılan olarak 1 adet
+        this.adet = 1;
     }
 
     // Getter ve Setter metotları

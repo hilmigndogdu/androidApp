@@ -46,7 +46,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.fiyat.setText(String.format("$%.2f", product.getFiyat()));
         holder.yorumSayisi.setText(String.valueOf(product.getYorumSayisi()));
         holder.puan.setText(String.valueOf(product.getPuan()));
-        holder.resim.setImageResource(R.drawable.ic_launcher_background);
+        holder.resim.setImageResource(product.getResimKaynak());
 
 
         // Ürün tıklama olayı

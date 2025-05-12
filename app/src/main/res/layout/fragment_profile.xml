@@ -1,151 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment"
-    android:padding="16dp"
+    android:background="@color/white"
     android:clickable="false"
     android:focusable="false"
     android:focusableInTouchMode="false"
-    android:background="@color/white">
+    tools:context=".fragments.ProfileFragment">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profileToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Profilim"
+        app:titleTextColor="@android:color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/profileToolbar"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#E0E0E0"
+        android:elevation="2dp" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="50dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
 
-        <!-- Profil Bilgisi -->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:padding="16dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_marginBottom="12dp">
+            android:layout_height="match_parent"
+            android:padding="15dp">
 
-            <!-- Profil Fotoğrafı -->
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_launcher_background"
-                android:background="@drawable/circle_background"
-                android:scaleType="centerCrop" />
-
-            <!-- Profil Bilgileri -->
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/genelLieLay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:id="@+id/kullaniciLieLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/bilgiLieLay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/hosgeldinizProfileTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hoşgeldiniz!"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/adSoyadProfileTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hilmi Gündoğdu"
+                            android:textColor="#666"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/emailProfileTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="hilmi@gmail.com"
+                            android:textColor="#888"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
                 <TextView
-                    android:id="@+id/welcome_text"
+                    android:id="@+id/kullaniciAyarlariTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Hesap Ayarları"
                     android:textColor="@color/black"
-                    android:text="Welcome back!"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/email_text"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/ayarlarLieLay"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="user@example.com"
-                    android:textSize="16sp"
-                    android:textColor="#666" />
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/rounded_card"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/bilgileriGuncelleTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableRight="@drawable/arrow_detail"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Bilgilerimi Güncelle"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/bilgilerGuncelleLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_card"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/adSoyadEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_card"
+                            android:hint="Ad Soyad"
+                            android:padding="12dp"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/emailEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rounded_card"
+                            android:hint="Email"
+                            android:padding="12dp"
+                            android:textColor="@color/black" />
+
+                        <EditText
+                            android:id="@+id/kullaniciAdiEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rounded_card"
+                            android:hint="Kullanıcı Adı"
+                            android:padding="12dp"
+                            android:textColor="@color/black" />
+
+                        <Button
+                            android:id="@+id/bilgileriKaydetBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/rounded_card"
+                            android:text="Kaydet"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+                        android:id="@+id/sifreSifirlaTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableRight="@drawable/arrow_detail"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Şifremi Sıfırla"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/sifreSifirlaLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_card"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/yeniSifreEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_card"
+                            android:hint="Yeni Şifre"
+                            android:inputType="textPassword"
+                            android:padding="8dp" />
+
+                        <Button
+                            android:id="@+id/sifreKaydetBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/red_button_background"
+                            android:text="Kaydet"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+
+                        android:id="@+id/hesabiSilTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableRight="@drawable/arrow_detail"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Hesabımı Sil"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/location_text"
+                    android:id="@+id/hareketlerTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="San Francisco, CA"
-                    android:textSize="14sp"
-                    android:textColor="#888" />
+                    android:layout_marginBottom="8dp"
+                    android:text="Hareketlerim"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/hareketlerimLieLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_card"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/siparislerimTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:drawableRight="@drawable/arrow_detail"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:padding="12dp"
+                        android:text="Siparişlerim"
+                        android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:id="@+id/siparislerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rounded_card"
+                            android:orientation="vertical"
+                            android:padding="12dp"
+                            android:visibility="gone">
+
+
+                            <TextView
+                                android:id="@+id/siparislerBaslikTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:text="Siparişlerim"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <androidx.core.widget.NestedScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            <ListView
+                                android:id="@+id/siparisListView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#EFEFEF"
+                                android:divider="@android:color/darker_gray"
+                                android:dividerHeight="1dp"
+                                android:padding="8dp" />
+                            </androidx.core.widget.NestedScrollView>
+                        </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <!-- Kişisel Detaylar Başlığı -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Personal Details"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Hesap ve Tercihler Kartı -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/rounded_card"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp">
-
-            <TextView
-                android:id="@+id/account_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Account"
-                android:textSize="16sp"
-                android:drawableRight="@drawable/arrow_detail"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#E0E0E0" />
-
-            <TextView
-                android:id="@+id/preferences_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Preferences"
-                android:textSize="16sp"
-                android:drawableRight="@drawable/arrow_detail"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground" />
-        </LinearLayout>
-
-        <!-- Diğer İşlevler Başlığı -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Features"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Fiyat Uyarıları Kartı -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/rounded_card"
-            android:padding="12dp">
-
-            <TextView
-                android:id="@+id/price_alerts_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Price Alerts"
-                android:textSize="16sp"
-                android:drawableRight="@drawable/arrow_detail"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:padding="12dp"
-                android:background="?android:attr/selectableItemBackground" />
-        </LinearLayout>
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>
